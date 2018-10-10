@@ -2,7 +2,7 @@
   max-width: 1080px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 24px 0;
+  padding: 24px 0 0;
   background-color: #fff;
 }
 
@@ -15,10 +15,6 @@
   width: 240px;
   height: 240px;
   margin: 36px auto 8px;
-}
-
-.sider {
-  background-color: #fff;
 }
 
 .siderTitle {
@@ -34,8 +30,12 @@
   background-color: #fff;
 }
 
-.timelineHeader {
+.companyInfo {
   display: flex;
+}
+
+.infoName {
+  flex: 1;
 }
 
 .companyLogo {
@@ -44,12 +44,7 @@
   margin-right: 10px;
 }
 
-.companyInfo {
-  flex: 1;
-}
-
 .companyDate {
-  width: 200px;
   text-align: right;
 }
 
@@ -64,4 +59,14 @@
 
 .expListContent {
   padding: 0 12px;
+}
+
+@media screen and (max-width:576px) {
+  .contentWrap {
+    padding: 8px 12px;
+  }
+  .companyDate {
+    text-align: left;
+    margin-bottom: 8px;
+  }
 }

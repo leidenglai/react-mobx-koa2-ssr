@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react'
 import {Layout, Icon, Card, Progress, Row, Col, List, Timeline, Tag} from 'antd'
 import style from './resume.style.css'
 
-const {Sider, Content} = Layout
+const {Content} = Layout
 const TimelineItem = Timeline.Item
 const ListItem = List.Item
 
@@ -148,7 +148,7 @@ export class ResumePage extends PureComponent {
                 href="https://xieleilei.wordpress.com/2016/05/22/webapp-%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8%E6%90%AD%E5%BB%BA-1/"
                 target="_blank"
                 rel="noopener noreferrer">
-                https://xieleilei.wordpress.com/2016/05/22/webapp-单页面应用搭建-1/
+                xieleilei-blog webapp-单页面应用搭建-1
               </a>
             </p>
             <p>
@@ -218,16 +218,25 @@ export class ResumePage extends PureComponent {
             <ol>
               <li>
                 游戏功能开发：游戏使用的zeptojs加javascript原型模式开发，zepto负责页面交互，dom控制、事件控制、触发控制；javascript
-                prototype负责逻辑控制。通过js+css/css3实现游戏绚丽的效果，如转盘抽奖、卡片拖动、动画帧播放，滑动等，我都做过。游戏pc版本地址：http://game.hanjiangsanguo.com（appstore是html通过cordova打包的ipa，代码逻辑一样）
+                prototype负责逻辑控制。通过js+css/css3实现游戏绚丽的效果，如转盘抽奖、卡片拖动、动画帧播放，滑动等，我都做过。
+                <br />
+                游戏pc版本地址：
+                <a href="http://game.hanjiangsanguo.com" target="_blank" rel="noopener noreferrer">
+                  悍将三国
+                </a>
+                （appstore是html通过cordova打包的ipa，代码逻辑一样）
               </li>
               <li>
-                网站开发：公司的游戏官网开发。从UI的PSD图到上线，我前后端一起开发，使用PHP的CI框架+mysql，然后前端页面编写、切图。（项目如：
-                http://www.hanjiangsanguo.com）；
+                网站开发：公司的游戏官网开发。从UI的PSD图到上线，我前后端一起开发，使用PHP的CI框架+mysql，然后前端页面编写、切图。
+                <br />
+                项目地址如：
+                <a href="http://www.hanjiangsanguo.com" target="_blank" rel="noopener noreferrer">
+                  悍将三国官方网站
+                </a>
+                ）；
               </li>
               <li>游戏多语言版本制作：各种css适配，本地化处理；</li>
-              <li>
-                html5宣传页编写：主要是投放到微信、手机浏览器等渠道的宣传页面和小游戏的编写,使用CSS3+js动画实现（如：http://t.cn/RGKjHQM）
-              </li>
+              <li>html5宣传页编写：主要是投放到微信、手机浏览器等渠道的宣传页面和小游戏的编写,使用CSS3+js动画实现</li>
               <li>培训新人：负责带实习生、新程序员，传授编程思想、代码习惯；</li>
             </ol>
           </div>
@@ -254,259 +263,265 @@ export class ResumePage extends PureComponent {
   render() {
     return (
       <Layout className={style.mainWrap}>
-        <Sider width={300} className={style.sider}>
-          <div className={style.siderTop}>
-            <div className={style.siderTopAvatar}>
-              <img style={inlineStyle.img} alt="头像" src={require('assets/images/avatar.jpg')} />
-            </div>
-            <h2>雷登来的简历</h2>
-            <p>5年前端开发经验，其中2年js游戏开发，3年电商开发</p>
-          </div>
+        <Content className={style.contentWrap}>
+          <Row>
+            <Col sm={24} md={8} xl={7}>
+              <div className={style.siderTop}>
+                <div className={style.siderTopAvatar}>
+                  <img style={inlineStyle.img} alt="头像" src={require('assets/images/avatar.jpg')} />
+                </div>
+                <h2>雷登来的简历</h2>
+                <p>5年前端开发经验，其中2年js游戏开发，3年电商开发</p>
+              </div>
 
-          <div>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="user" theme="outlined" />
-                  <span className={style.siderTitle}>Basic info. 基本信息</span>
-                </div>
-              }>
-              <div className={style.contentList}>
-                <Row>
-                  <Col span={7}>个人信息：</Col>
-                  <Col span={17}>雷登来 / 26岁 / 5年工作经验 / 大专</Col>
-                </Row>
-                <Row>
-                  <Col span={7}>职位：</Col>
-                  <Col span={17}>敦煌网 / 高级前端开发工程师</Col>
-                </Row>
-                <Row>
-                  <Col span={7}>GitHub：</Col>
-                  <Col span={17}>
-                    <a href="https://github.com/leidenglai" target="_blank" rel="noopener noreferrer">
-                      leidenglai
-                    </a>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col span={7}>知乎：</Col>
-                  <Col span={17}>
-                    <a href="https://www.zhihu.com/people/denglai/posts" target="_blank" rel="noopener noreferrer">
-                      denglai
-                    </a>
-                  </Col>
-                </Row>
+              <div>
+                <Card
+                  style={inlineStyle.card}
+                  bordered={false}
+                  title={
+                    <div>
+                      <Icon type="user" theme="outlined" />
+                      <span className={style.siderTitle}>Basic info. 基本信息</span>
+                    </div>
+                  }>
+                  <div className={style.contentList}>
+                    <Row>
+                      <Col span={7}>个人信息：</Col>
+                      <Col span={17}>雷登来 / 26岁 / 5年工作经验 / 大专</Col>
+                    </Row>
+                    <Row>
+                      <Col span={7}>职位：</Col>
+                      <Col span={17}>敦煌网 / 高级前端开发工程师</Col>
+                    </Row>
+                    <Row>
+                      <Col span={7}>GitHub：</Col>
+                      <Col span={17}>
+                        <a href="https://github.com/leidenglai" target="_blank" rel="noopener noreferrer">
+                          Github-leidenglai
+                        </a>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={7}>知乎：</Col>
+                      <Col span={17}>
+                        <a href="https://www.zhihu.com/people/denglai/posts" target="_blank" rel="noopener noreferrer">
+                          知乎-denglai
+                        </a>
+                      </Col>
+                    </Row>
+                  </div>
+                </Card>
+                <Card
+                  style={inlineStyle.card}
+                  bordered={false}
+                  title={
+                    <div>
+                      <Icon type="phone" theme="outlined" />
+                      <span className={style.siderTitle}>Contact. 联系方式</span>
+                    </div>
+                  }>
+                  <div className={style.contentList}>
+                    <Row>
+                      <Col span={7}>Email: </Col>
+                      <Col span={17}>
+                        <a href="mailto:leidenglai@qq.com">leidenglai@qq.com</a>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={7}>手机/微信: </Col>
+                      <Col span={17}>13241106608</Col>
+                    </Row>
+                  </div>
+                </Card>
+                <Card
+                  style={inlineStyle.card}
+                  bordered={false}
+                  title={
+                    <div>
+                      <Icon type="like" theme="outlined" />
+                      <span className={style.siderTitle}>Application. 期望工作</span>
+                    </div>
+                  }>
+                  <div className={style.contentList}>
+                    <Row>
+                      <Col>Web前端工程师 / 成都 / 20k+</Col>
+                    </Row>
+                  </div>
+                </Card>
+                <Card
+                  style={inlineStyle.card}
+                  bordered={false}
+                  title={
+                    <div>
+                      <Icon type="thunderbolt" theme="outlined" />
+                      <span className={style.siderTitle}>Tech. 个人能力</span>
+                    </div>
+                  }>
+                  <div className={style.siderContentList}>
+                    <Row className={style.siderContentLi}>
+                      <Col span={10}>JavaScript</Col>
+                      <Col span={14}>
+                        <Progress percent={90} showInfo={false} />
+                      </Col>
+                    </Row>
+                    <Row className={style.siderContentLi}>
+                      <Col span={10}>React</Col>
+                      <Col span={14}>
+                        <Progress percent={85} showInfo={false} />
+                      </Col>
+                    </Row>
+                    <Row className={style.siderContentLi}>
+                      <Col span={10}>Web应用架构</Col>
+                      <Col span={14}>
+                        <Progress percent={80} showInfo={false} />
+                      </Col>
+                    </Row>
+                    <Row className={style.siderContentLi}>
+                      <Col span={10}>HTML+CSS</Col>
+                      <Col span={14}>
+                        <Progress percent={80} showInfo={false} />
+                      </Col>
+                    </Row>
+                    <Row className={style.siderContentLi}>
+                      <Col span={10}>PHP+Nodejs</Col>
+                      <Col span={14}>
+                        <Progress percent={60} showInfo={false} />
+                      </Col>
+                    </Row>
+                  </div>
+                </Card>
               </div>
-            </Card>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="phone" theme="outlined" />
-                  <span className={style.siderTitle}>Contact. 联系方式</span>
-                </div>
-              }>
-              <div className={style.contentList}>
-                <Row>
-                  <Col span={7}>Email: </Col>
-                  <Col span={17}>
-                    <a href="mailto:leidenglai@qq.com">leidenglai@qq.com</a>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col span={7}>手机/微信: </Col>
-                  <Col span={17}>13241106608</Col>
-                </Row>
-              </div>
-            </Card>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="like" theme="outlined" />
-                  <span className={style.siderTitle}>Application. 期望工作</span>
-                </div>
-              }>
-              <div className={style.contentList}>
-                <Row>
-                  <Col>Web前端工程师 / 成都 / 20k+</Col>
-                </Row>
-              </div>
-            </Card>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="thunderbolt" theme="outlined" />
-                  <span className={style.siderTitle}>Tech. 个人能力</span>
-                </div>
-              }>
-              <div className={style.siderContentList}>
-                <Row className={style.siderContentLi}>
-                  <Col span={10}>JavaScript</Col>
-                  <Col span={14}>
-                    <Progress percent={90} showInfo={false} />
-                  </Col>
-                </Row>
-                <Row className={style.siderContentLi}>
-                  <Col span={10}>React</Col>
-                  <Col span={14}>
-                    <Progress percent={85} showInfo={false} />
-                  </Col>
-                </Row>
-                <Row className={style.siderContentLi}>
-                  <Col span={10}>Web应用架构</Col>
-                  <Col span={14}>
-                    <Progress percent={80} showInfo={false} />
-                  </Col>
-                </Row>
-                <Row className={style.siderContentLi}>
-                  <Col span={10}>HTML+CSS</Col>
-                  <Col span={14}>
-                    <Progress percent={80} showInfo={false} />
-                  </Col>
-                </Row>
-                <Row className={style.siderContentLi}>
-                  <Col span={10}>PHP+Nodejs</Col>
-                  <Col span={14}>
-                    <Progress percent={60} showInfo={false} />
-                  </Col>
-                </Row>
-              </div>
-            </Card>
-          </div>
-        </Sider>
-        <Layout className={style.contentWrap}>
-          <Content>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="double-right" theme="outlined" />
-                  <span className={style.siderTitle}>Skill. 主要技能</span>
-                </div>
-              }>
-              <List
-                split={false}
-                size="small"
-                dataSource={this.skillList}
-                renderItem={item => (
-                  <ListItem>
-                    <li>{item}</li>
-                  </ListItem>
-                )}
-              />
-            </Card>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="double-right" theme="outlined" />
-                  <span className={style.siderTitle}>Company. 工作经历</span>
-                </div>
-              }>
-              <Timeline>
-                {this.workList.map((item, key) => (
-                  <TimelineItem key={key}>
-                    <div className={style.timelineHeader}>
-                      <div className={style.companyLogo}>
-                        <img style={inlineStyle.img} src={item.logo} alt="公司Logo" />
+            </Col>
+            <Col sm={24} md={16} xl={17}>
+              <Card
+                style={inlineStyle.card}
+                bordered={false}
+                title={
+                  <div>
+                    <Icon type="double-right" theme="outlined" />
+                    <span className={style.siderTitle}>Skill. 主要技能</span>
+                  </div>
+                }>
+                <List
+                  split={false}
+                  size="small"
+                  dataSource={this.skillList}
+                  renderItem={item => (
+                    <ListItem>
+                      <li>{item}</li>
+                    </ListItem>
+                  )}
+                />
+              </Card>
+              <Card
+                style={inlineStyle.card}
+                bordered={false}
+                title={
+                  <div>
+                    <Icon type="double-right" theme="outlined" />
+                    <span className={style.siderTitle}>Company. 工作经历</span>
+                  </div>
+                }>
+                <Timeline>
+                  {this.workList.map((item, key) => (
+                    <TimelineItem key={key}>
+                      <Row className={style.timelineHeader}>
+                        <Col xs={24} sm={16} className={style.companyInfo}>
+                          <div className={style.companyLogo}>
+                            <img style={inlineStyle.img} src={item.logo} alt="公司Logo" />
+                          </div>
+                          <div className={style.infoName}>
+                            <h4>
+                              {item.company} / {item.team}
+                            </h4>
+                            <p>{item.position}</p>
+                          </div>
+                        </Col>
+                        <Col xs={24} sm={8} className={style.companyDate}>
+                          <span>{item.period}</span>
+                        </Col>
+                      </Row>
+                      <div className={style.timelineTag}>
+                        {item.tag.map((text, key) => (
+                          <Tag style={inlineStyle.tag} key={key}>
+                            {text}
+                          </Tag>
+                        ))}
                       </div>
-                      <div className={style.companyInfo}>
-                        <h4>
-                          {item.company} / {item.team}
-                        </h4>
-                        <p>{item.position}</p>
+                      <div className={style.timelineContent}>
+                        <p>{item.description}</p>
                       </div>
-                      <div className={style.companyDate}>
-                        <span>{item.period}</span>
+                    </TimelineItem>
+                  ))}
+                </Timeline>
+              </Card>
+              <Card
+                style={inlineStyle.card}
+                bordered={false}
+                title={
+                  <div>
+                    <Icon type="double-right" theme="outlined" />
+                    <span className={style.siderTitle}>Project. 项目经历</span>
+                  </div>
+                }>
+                <Timeline>
+                  {this.projectList.map((item, key) => (
+                    <TimelineItem key={key}>
+                      <Row className={style.timelineHeader}>
+                        <Col xs={24} sm={16} className={style.companyInfo}>
+                          <h4>{item.name}</h4>
+                        </Col>
+                        <Col xs={24} sm={8} className={style.companyDate}>
+                          <span>{item.period}</span>
+                        </Col>
+                      </Row>
+                      <div className={style.timelineTag}>
+                        {item.tag.map((text, key) => (
+                          <Tag style={inlineStyle.tag} key={key}>
+                            {text}
+                          </Tag>
+                        ))}
                       </div>
-                    </div>
-                    <div className={style.timelineTag}>
-                      {item.tag.map((text, key) => (
-                        <Tag style={inlineStyle.tag} key={key}>
-                          {text}
-                        </Tag>
-                      ))}
-                    </div>
-                    <div className={style.timelineContent}>
-                      <p>{item.description}</p>
-                    </div>
-                  </TimelineItem>
-                ))}
-              </Timeline>
-            </Card>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="double-right" theme="outlined" />
-                  <span className={style.siderTitle}>Project. 项目经历</span>
-                </div>
-              }>
-              <Timeline>
-                {this.projectList.map((item, key) => (
-                  <TimelineItem key={key}>
-                    <div className={style.timelineHeader}>
-                      <div className={style.companyInfo}>
-                        <h4>{item.name}</h4>
+                      <div className={style.timelineContent}>
+                        <div className={style.expListContent}>{item.description}</div>
                       </div>
-                      <div className={style.companyDate}>
-                        <span>{item.period}</span>
-                      </div>
-                    </div>
-                    <div className={style.timelineTag}>
-                      {item.tag.map((text, key) => (
-                        <Tag style={inlineStyle.tag} key={key}>
-                          {text}
-                        </Tag>
-                      ))}
-                    </div>
-                    <div className={style.timelineContent}>
-                      <div className={style.expListContent}>{item.description}</div>
-                    </div>
-                  </TimelineItem>
-                ))}
-              </Timeline>
-            </Card>
-            <Card
-              style={inlineStyle.card}
-              bordered={false}
-              title={
-                <div>
-                  <Icon type="double-right" theme="outlined" />
-                  <span className={style.siderTitle}>University. 教育经历</span>
-                </div>
-              }>
-              <Timeline>
-                {this.schoolList.map((item, key) => (
-                  <TimelineItem key={key}>
-                    <div className={style.timelineHeader}>
-                      <div className={style.companyLogo}>
-                        <img style={inlineStyle.img} src={item.logo} alt="学校Logo" />
-                      </div>
-                      <div className={style.companyInfo}>
-                        <h4>{item.name}</h4>
-                        <p>{item.position}</p>
-                      </div>
-                      <div className={style.companyDate}>
-                        <span>{item.period}</span>
-                      </div>
-                    </div>
-                  </TimelineItem>
-                ))}
-              </Timeline>
-            </Card>
-          </Content>
-        </Layout>
+                    </TimelineItem>
+                  ))}
+                </Timeline>
+              </Card>
+              <Card
+                style={inlineStyle.card}
+                bordered={false}
+                title={
+                  <div>
+                    <Icon type="double-right" theme="outlined" />
+                    <span className={style.siderTitle}>University. 教育经历</span>
+                  </div>
+                }>
+                <Timeline>
+                  {this.schoolList.map((item, key) => (
+                    <TimelineItem key={key}>
+                      <Row className={style.timelineHeader}>
+                        <Col xs={24} sm={16} className={style.companyInfo}>
+                          <div className={style.companyLogo}>
+                            <img style={inlineStyle.img} src={item.logo} alt="学校Logo" />
+                          </div>
+                          <div className={style.infoName}>
+                            <h4>{item.name}</h4>
+                            <p>{item.position}</p>
+                          </div>
+                        </Col>
+                        <Col xs={24} sm={8} className={style.companyDate}>
+                          <span>{item.period}</span>
+                        </Col>
+                      </Row>
+                    </TimelineItem>
+                  ))}
+                </Timeline>
+              </Card>
+            </Col>
+          </Row>
+        </Content>
       </Layout>
     )
   }
