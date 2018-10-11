@@ -9,10 +9,10 @@ webpack(config, (err, stats) => {
   }
 
   // show build info to console
-  console.log(stats.toString({chunks: false, color: true}))
+  console.log(stats.toString({ chunks: false, color: true }))
 
   // save build info to file
-  fs.writeFile(path.resolve(__dirname, '../dist/__build_info__'), stats.toString({color: false}), err => {
+  fs.writeFile(path.resolve(__dirname, '../dist/__build_info__'), stats.toString({ color: false }), err => {
     if (err) {
       console.log('error', err)
     }

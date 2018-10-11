@@ -1,8 +1,8 @@
-import React, {PureComponent} from 'react'
-import {Layout, Icon, Card, Progress, Row, Col, List, Timeline, Tag} from 'antd'
+import React, { PureComponent } from 'react'
+import { Layout, Icon, Card, Progress, Row, Col, List, Timeline, Tag } from 'antd'
 import style from './resume.style.css'
 
-const {Content} = Layout
+const { Content } = Layout
 const TimelineItem = Timeline.Item
 const ListItem = List.Item
 
@@ -15,7 +15,7 @@ export class ResumePage extends PureComponent {
       '精通React、Redux及其配套的插件；熟悉其他主流前端框架及其思想，了解各框架的优势和缺点；',
       '具有中小型项目前端的架构能力，对电商和数据类产品开发比较熟悉；',
       '具备工程化的前端思维，具备良好的分析问题和解决问题能力，善于学习、总结，喜欢研究新技术，乐于分享',
-      '熟悉后端语言：PHP、nodejs，有实际上线项目经验',
+      '熟悉后端语言：PHP、nodejs，有实际上线项目经验'
     ]
 
     this.workList = [
@@ -27,7 +27,7 @@ export class ResumePage extends PureComponent {
         period: '2015.05-至今',
         tag: ['架构师', '前端开发', 'React'],
         description:
-          '负责新兴事业部的前端架构，如Socialshops项目、后台管理系统（React+Redux），手机web端的商城系统（webpack+es6+zepto），大V分销系统（Angular）',
+          '负责新兴事业部的前端架构，如Socialshops项目、后台管理系统（React+Redux），手机web端的商城系统（webpack+es6+zepto），大V分销系统（Angular）'
       },
       {
         company: '北京展程科技有限公司',
@@ -37,8 +37,8 @@ export class ResumePage extends PureComponent {
         period: '2013.11-2015.04',
         tag: ['移动端', '原生JS'],
         description:
-          '开发和维护游戏（Zepto+Canvas+PhoneGap）。开发游戏新活动、新功能和模块、优化js、css代码；负责游戏海外版本前端开发项目组',
-      },
+          '开发和维护游戏（Zepto+Canvas+PhoneGap）。开发游戏新活动、新功能和模块、优化js、css代码；负责游戏海外版本前端开发项目组'
+      }
     ]
 
     this.projectList = [
@@ -46,7 +46,7 @@ export class ResumePage extends PureComponent {
         name: 'Socialshops SellerWeb',
         period: '2017.06-至今',
         tag: ['项目管理', '技术架构', '功能开发'],
-        description: (
+        description:
           <div>
             <p>
               项目地址为开源的架构demo,UI使用的是阿里的antd;{' '}
@@ -98,13 +98,13 @@ export class ResumePage extends PureComponent {
               <br />
             </p>
           </div>
-        ),
+
       },
       {
         name: 'Novoshops-WebApp',
         period: '2017.03-2018.01',
         tag: ['自搭框架', '项目管理'],
-        description: (
+        description:
           <div>
             <p>
               项目地址为开源的架构demo;
@@ -129,13 +129,13 @@ export class ResumePage extends PureComponent {
             <p>• 易开发和构建：使用了webpack2作为项目的开发工具，调试方便、构建简单，一键发布。</p>
             <p />
           </div>
-        ),
+
       },
       {
         name: 'Socialshops IM',
         period: '2016.03-2017.05',
         tag: ['WebView', '技术架构'],
-        description: (
+        description:
           <div>
             <p>Socialshops是面向生产商、批发商进行商业交流和商品推广交易的移动平台，一个私密的在线交易APP。</p>
             <p>
@@ -158,13 +158,13 @@ export class ResumePage extends PureComponent {
               这是一个由Requestjs+Zepto架构的单页应用。我负责几乎全部的工作，从技术选型到基础架构、模块化、业务功能编写、上线构建工程化等。使app内运行的web页面体验几乎可以媲美原生模块。
             </p>
           </div>
-        ),
+
       },
       {
         name: 'Socialshops',
         period: '2016.03-2017.05',
         tag: ['前端负责人'],
-        description: (
+        description:
           <div>
             <p>
               一个面向海外用户的社交购物网站，包含一整套系统：influencer(主站，大V系统：www.socialshops.com)、merchant（卖家系统:merchant.socialshops.com）、socialstore(商店socialstore.socialshops.com)、ops(ops.socialshops.com管理系统)；
@@ -206,13 +206,13 @@ export class ResumePage extends PureComponent {
               </li>
             </ol>
           </div>
-        ),
+
       },
       {
         name: '悍将三国',
         period: '2013.11-2015.04',
         tag: ['大型H5游戏'],
-        description: (
+        description:
           <div>
             《悍将三国》是一款由HTML5打造的ios游戏、具有丰富的pvp和pve功能，前端技术主要是js、css3、canvas。 工作内容：
             <ol>
@@ -240,8 +240,8 @@ export class ResumePage extends PureComponent {
               <li>培训新人：负责带实习生、新程序员，传授编程思想、代码习惯；</li>
             </ol>
           </div>
-        ),
-      },
+
+      }
     ]
 
     this.schoolList = [
@@ -249,14 +249,14 @@ export class ResumePage extends PureComponent {
         name: '北京皮皮西有限公司',
         logo: 'https://www.lgstatic.com/thumbnail_300x300/image1/M00/00/2D/Cgo8PFTUXHmAATcfAACfCmlg9Ek066.png',
         position: 'PHP语言培训',
-        period: '2013.06-2013.11',
+        period: '2013.06-2013.11'
       },
       {
         name: '重庆城市管理职业学院',
         logo: require('assets/images/cqcsglxy.png'),
         position: '大专 / 软件工程',
-        period: '2011.09-2014.07',
-      },
+        period: '2011.09-2014.07'
+      }
     ]
   }
 
@@ -406,11 +406,11 @@ export class ResumePage extends PureComponent {
                   split={false}
                   size="small"
                   dataSource={this.skillList}
-                  renderItem={item => (
+                  renderItem={item =>
                     <ListItem>
                       <li>{item}</li>
                     </ListItem>
-                  )}
+                  }
                 />
               </Card>
               <Card
@@ -423,7 +423,7 @@ export class ResumePage extends PureComponent {
                   </div>
                 }>
                 <Timeline>
-                  {this.workList.map((item, key) => (
+                  {this.workList.map((item, key) =>
                     <TimelineItem key={key}>
                       <Row className={style.timelineHeader}>
                         <Col xs={24} sm={16} className={style.companyInfo}>
@@ -442,17 +442,15 @@ export class ResumePage extends PureComponent {
                         </Col>
                       </Row>
                       <div className={style.timelineTag}>
-                        {item.tag.map((text, key) => (
+                        {item.tag.map((text, key) =>
                           <Tag style={inlineStyle.tag} key={key}>
                             {text}
-                          </Tag>
-                        ))}
+                          </Tag>)}
                       </div>
                       <div className={style.timelineContent}>
                         <p>{item.description}</p>
                       </div>
-                    </TimelineItem>
-                  ))}
+                    </TimelineItem>)}
                 </Timeline>
               </Card>
               <Card
@@ -465,7 +463,7 @@ export class ResumePage extends PureComponent {
                   </div>
                 }>
                 <Timeline>
-                  {this.projectList.map((item, key) => (
+                  {this.projectList.map((item, key) =>
                     <TimelineItem key={key}>
                       <Row className={style.timelineHeader}>
                         <Col xs={24} sm={16} className={style.companyInfo}>
@@ -476,17 +474,15 @@ export class ResumePage extends PureComponent {
                         </Col>
                       </Row>
                       <div className={style.timelineTag}>
-                        {item.tag.map((text, key) => (
+                        {item.tag.map((text, key) =>
                           <Tag style={inlineStyle.tag} key={key}>
                             {text}
-                          </Tag>
-                        ))}
+                          </Tag>)}
                       </div>
                       <div className={style.timelineContent}>
                         <div className={style.expListContent}>{item.description}</div>
                       </div>
-                    </TimelineItem>
-                  ))}
+                    </TimelineItem>)}
                 </Timeline>
               </Card>
               <Card
@@ -499,7 +495,7 @@ export class ResumePage extends PureComponent {
                   </div>
                 }>
                 <Timeline>
-                  {this.schoolList.map((item, key) => (
+                  {this.schoolList.map((item, key) =>
                     <TimelineItem key={key}>
                       <Row className={style.timelineHeader}>
                         <Col xs={24} sm={16} className={style.companyInfo}>
@@ -515,8 +511,7 @@ export class ResumePage extends PureComponent {
                           <span>{item.period}</span>
                         </Col>
                       </Row>
-                    </TimelineItem>
-                  ))}
+                    </TimelineItem>)}
                 </Timeline>
               </Card>
             </Col>
@@ -528,7 +523,7 @@ export class ResumePage extends PureComponent {
 }
 
 const inlineStyle = {
-  card: {backgroundColor: 'transparent', marginBottom: 24},
-  img: {width: '100%', height: '100%'},
-  tag: {border: '1px solid #EAEDEC', borderRadius: 100, color: '#999'},
+  card: { backgroundColor: 'transparent', marginBottom: 24 },
+  img: { width: '100%', height: '100%' },
+  tag: { border: '1px solid #EAEDEC', borderRadius: 100, color: '#999' }
 }

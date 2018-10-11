@@ -15,11 +15,11 @@ process.noDeprecation = true
 module.exports = {
   mode: env,
   entry: {
-    app: path.join(src, 'app.js'),
+    app: path.join(src, 'app.js')
   },
   output: {
     path: path.join(rootPath, 'dist/static'),
-    publicPath: '/static/',
+    publicPath: '/static/'
   },
   resolve: {
     extensions: ['.js', '.css', '.less'],
@@ -29,8 +29,8 @@ module.exports = {
       // ================================
       src,
       assets: path.join(src, 'assets'),
-      containers: path.join(src, 'containers'),
-    },
+      containers: path.join(src, 'containers')
+    }
   },
   module: {
     rules: [
@@ -40,19 +40,19 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true,
-          },
-        },
+            cacheDirectory: true
+          }
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         loader: 'url-loader',
         options: {
           limit: 10240, // 10KB 以下使用 base64
-          name: 'img/[name]-[hash:6].[ext]',
-        },
-      },
-    ],
+          name: 'img/[name]-[hash:6].[ext]'
+        }
+      }
+    ]
   },
   optimization: {
     splitChunks: {
@@ -61,16 +61,16 @@ module.exports = {
           test: /\/node_modules\//,
           name: 'vendors',
           chunks: 'initial',
-          priority: 2,
+          priority: 2
         },
         styles: {
           name: 'styles',
           test: /\.css$/,
           enforce: true,
-          priority: 20,
-        },
-      },
-    },
+          priority: 20
+        }
+      }
+    }
   },
   plugins: [
     new ProgressBarPlugin(), // 进度条
@@ -87,14 +87,14 @@ module.exports = {
         opengraph: false,
         twitter: false,
         yandex: false,
-        windows: false,
-      },
+        windows: false
+      }
     }),
 
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [rucksack(), autoprefixer({browsers: ['last 2 versions', 'Firefox ESR', '> 2%', 'ie >= 10', 'iOS >= 9']})],
-      },
+        postcss: [rucksack(), autoprefixer({ browsers: ['last 2 versions', 'Firefox ESR', '> 2%', 'ie >= 10', 'iOS >= 9'] })]
+      }
     }),
 
     new webpack.DefinePlugin({
@@ -102,7 +102,7 @@ module.exports = {
       // 配置开发全局常量
       // ================================
       __DEV__: env === 'development',
-      __PROD__: env === 'production',
-    }),
-  ],
+      __PROD__: env === 'production'
+    })
+  ]
 }

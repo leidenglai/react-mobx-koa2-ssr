@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const rootPath = path.resolve(__dirname, '..') // 项目根目录
 const SOURCE_MAP = true
-const env = process.env.NODE_ENV.trim() // 当前环境
 
 config.output.publicPath = '/'
 config.output.filename = '[name].js'
@@ -24,7 +23,7 @@ config.entry.app = [
   // 为热替换（HMR）打包好运行代码
   // only- 意味着只有成功更新运行代码才会执行热替换（HMR）
   'webpack/hot/only-dev-server',
-  config.entry.app,
+  config.entry.app
 ]
 
 config.module.rules.push(
@@ -35,9 +34,9 @@ config.module.rules.push(
       `css-loader?modules&context=${__dirname}&localIdentName=[name]__[local]___[hash:base64:5]`,
       {
         loader: 'postcss-loader',
-        options: {plugins: () => [require('autoprefixer')]},
-      },
-    ],
+        options: { plugins: () => [require('autoprefixer')] }
+      }
+    ]
   },
   {
     test: /\.less$/,
@@ -47,10 +46,10 @@ config.module.rules.push(
       'css-loader',
       {
         loader: 'postcss-loader',
-        options: {plugins: () => [require('autoprefixer')]},
+        options: { plugins: () => [require('autoprefixer')] }
       },
-      'less-loader',
-    ],
+      'less-loader'
+    ]
   }
 )
 
@@ -61,15 +60,15 @@ config.plugins.push(
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: path.join(rootPath, 'src/index.html'),
-    chunksSortMode: 'dependency',
+    chunksSortMode: 'dependency'
   }),
-  new MiniCssExtractPlugin({filename: '[name].css'}),
+  new MiniCssExtractPlugin({ filename: '[name].css' }),
 
   new webpack.DefinePlugin({
     'process.env': {
       // 这是给 React 打包用的
-      NODE_ENV: JSON.stringify('development'),
-    },
+      NODE_ENV: JSON.stringify('development')
+    }
   }),
   new BrowserSyncPlugin(
     {
@@ -79,9 +78,9 @@ config.plugins.push(
       proxy: 'http://127.0.0.1:3725/',
       logConnections: false,
       notify: false,
-      browser: 'google chrome',
+      browser: 'google chrome'
     },
-    {reload: false}
+    { reload: false }
   )
 )
 

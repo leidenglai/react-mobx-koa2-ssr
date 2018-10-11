@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import {ResumePage} from './containers/resume'
+import { ResumePage } from './containers/resume'
 
 /* global __DEV__ */
 if (__DEV__) {
@@ -14,11 +14,10 @@ if (__PROD__) {
   console.info('[当前环境] 生产环境')
 }
 
-const App = () => (
+const App = () =>
   <div className="container-wrapper">
     <ResumePage />
   </div>
-)
 
 // ================================
 // 将根组件挂载到 DOM，启动！
