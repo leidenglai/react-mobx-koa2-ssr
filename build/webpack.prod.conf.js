@@ -63,7 +63,7 @@ config.plugins.push(
   new MiniCssExtractPlugin({ filename: '[name].[contenthash:6].css' }),
   new HtmlWebpackPlugin({
     filename: '../index.html',
-    template: path.join(rootPath, 'src/index.html'),
+    template: path.join(rootPath, 'client/index.html'),
     chunksSortMode: 'dependency'
   })
 )

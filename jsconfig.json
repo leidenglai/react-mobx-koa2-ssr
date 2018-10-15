@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-      "assets/*": ["src/assets/*"],
-      "containers/*": ["src/containers/*"]
+      "client/*": ["client/*"],
+      "assets/*": ["client/assets/*"],
+      "containers/*": ["client/containers/*"]
     },
     "experimentalDecorators": true
   }

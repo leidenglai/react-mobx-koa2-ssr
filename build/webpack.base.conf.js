@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer')
 
 const rootPath = path.resolve(__dirname, '..') // 项目根目录
 const env = process.env.NODE_ENV.trim() // 当前环境
-const src = path.join(rootPath, 'src') // 开发源码目录
+const client = path.join(rootPath, 'client') // 开发源码目录
 
 process.noDeprecation = true
 
@@ -15,7 +15,7 @@ process.noDeprecation = true
 module.exports = {
   mode: env,
   entry: {
-    app: path.join(src, 'app.js')
+    app: path.join(client, 'app.js')
   },
   output: {
     path: path.join(rootPath, 'dist/static'),
@@ -27,9 +27,9 @@ module.exports = {
       // ================================
       // 自定义路径别名
       // ================================
-      src,
-      assets: path.join(src, 'assets'),
-      containers: path.join(src, 'containers')
+      client,
+      assets: path.join(client, 'assets'),
+      containers: path.join(client, 'containers')
     }
   },
   module: {
@@ -76,7 +76,7 @@ module.exports = {
     new ProgressBarPlugin(), // 进度条
 
     new FaviconsWebpackPlugin({
-      logo: path.join(src, 'assets/images/favicon.jpg'),
+      logo: path.join(client, 'assets/images/favicon.jpg'),
       icons: {
         android: false,
         appleIcon: false,
