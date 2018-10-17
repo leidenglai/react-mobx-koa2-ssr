@@ -1,11 +1,11 @@
-const path = require('path')
+// const path = require('path')
 const webpack = require('webpack')
 const config = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const rootPath = path.resolve(__dirname, '..') // 项目根目录
+// const rootPath = path.resolve(__dirname, '..') // 项目根目录
 const SOURCE_MAP = true
 
 config.output.publicPath = '/'
@@ -42,7 +42,6 @@ config.module.rules.push(
     test: /\.less$/,
     use: [
       'style-loader',
-      MiniCssExtractPlugin.loader,
       'css-loader',
       {
         loader: 'postcss-loader',
@@ -58,10 +57,17 @@ config.plugins.push(
   new webpack.HotModuleReplacementPlugin(),
 
   new HtmlWebpackPlugin({
-    filename: 'index.html',
-    template: path.join(rootPath, 'client/index.html'),
+    filename: '../views/dev/index.html',
+    template: './views/tpl/index.tpl.html',
     chunksSortMode: 'dependency'
   }),
+
+  // new HtmlWebpackPlugin({
+  //   filename: 'index.html',
+  //   template: path.join(rootPath, 'client/index.html'),
+  //   chunksSortMode: 'dependency'
+  // }),
+
   new MiniCssExtractPlugin({ filename: '[name].css' }),
 
   new webpack.DefinePlugin({
@@ -69,19 +75,19 @@ config.plugins.push(
       // 这是给 React 打包用的
       NODE_ENV: JSON.stringify('development')
     }
-  }),
-  new BrowserSyncPlugin(
-    {
-      host: '127.0.0.1',
-      open: false,
-      port: 3725,
-      proxy: 'http://127.0.0.1:3725/',
-      logConnections: false,
-      notify: false,
-      browser: 'google chrome'
-    },
-    { reload: false }
-  )
+  })
+  // new BrowserSyncPlugin(
+  //   {
+  //     host: '127.0.0.1',
+  //     open: false,
+  //     port: 3725,
+  //     proxy: 'http://127.0.0.1:3725/',
+  //     logConnections: false,
+  //     notify: false,
+  //     browser: 'google chrome'
+  //   },
+  //   { reload: false }
+  // )
 )
 
 module.exports = config

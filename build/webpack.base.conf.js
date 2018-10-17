@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const rucksack = require('rucksack-css')
 const autoprefixer = require('autoprefixer')
 
@@ -18,8 +17,8 @@ module.exports = {
     app: path.join(client, 'app.js')
   },
   output: {
-    path: path.join(rootPath, 'dist/static'),
-    publicPath: '/static/'
+    path: path.join(rootPath, 'dist/client'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.css', '.less'],
@@ -43,6 +42,10 @@ module.exports = {
             cacheDirectory: true
           }
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -74,22 +77,6 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin(), // 进度条
-
-    new FaviconsWebpackPlugin({
-      logo: path.join(client, 'assets/images/favicon.jpg'),
-      icons: {
-        android: false,
-        appleIcon: false,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    }),
 
     new webpack.LoaderOptionsPlugin({
       options: {
