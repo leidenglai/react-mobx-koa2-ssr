@@ -21,7 +21,7 @@ export class ResumePage extends PureComponent {
     this.workList = [
       {
         company: '敦煌网',
-        logo: 'https://www.lgstatic.com/image1/M00/00/20/Cgo8PFTUWG2AdfQtAABEjOK8y7Q105.jpg',
+        logo: require('assets/images/dhgate-logo.png'),
         team: '新兴事业部',
         position: '高级前端开发工程师',
         period: '2015.05-至今',
@@ -31,7 +31,7 @@ export class ResumePage extends PureComponent {
       },
       {
         company: '北京展程科技有限公司',
-        logo: 'https://www.lgstatic.com/i/image/M00/02/23/CgqKkVaDeA2ABTybAAHBn5iT9bA749.png',
+        logo: require('assets/images/zc-logo.png'),
         team: 'JS游戏组',
         position: '前端开发工程师',
         period: '2013.11-2015.04',
@@ -268,7 +268,7 @@ export class ResumePage extends PureComponent {
             <Col sm={24} md={8} xl={7}>
               <div className={style.siderTop}>
                 <div className={style.siderTopAvatar}>
-                  <img style={inlineStyle.img} alt="头像" src={require('assets/images/avatar.jpg')} />
+                  <img width="46" height="46" style={inlineStyle.img} alt="头像" src={require('assets/images/avatar.jpg')} />
                 </div>
                 <h2>雷登来的简历</h2>
                 <p>5年前端开发经验，其中2年js游戏开发，3年电商开发</p>
@@ -428,7 +428,7 @@ export class ResumePage extends PureComponent {
                       <Row className={style.timelineHeader}>
                         <Col xs={24} sm={16} className={style.companyInfo}>
                           <div className={style.companyLogo}>
-                            <img style={inlineStyle.img} src={item.logo} alt="公司Logo" />
+                            <img width="46" height="46" style={inlineStyle.img} src={item.logo} alt="公司Logo" />
                           </div>
                           <div className={style.infoName}>
                             <h4>
@@ -500,7 +500,7 @@ export class ResumePage extends PureComponent {
                       <Row className={style.timelineHeader}>
                         <Col xs={24} sm={16} className={style.companyInfo}>
                           <div className={style.companyLogo}>
-                            <img style={inlineStyle.img} src={item.logo} alt="学校Logo" />
+                            <img width="46" height="46" style={inlineStyle.img} src={item.logo} alt="学校Logo" />
                           </div>
                           <div className={style.infoName}>
                             <h4>{item.name}</h4>
