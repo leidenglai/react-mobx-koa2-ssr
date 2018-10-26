@@ -3,6 +3,7 @@ const path = require('path')
 const baseConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
@@ -53,6 +54,14 @@ clientConfig.plugins.push(
     root: rootPath,
     verbose: false
   }),
+
+  // 复制高度静态资源
+  new CopyWebpackPlugin([
+    {
+      context: path.join(rootPath, 'static'),
+      from: '**/*'
+    }
+  ]),
 
   // 启用作用域提升
   // 作用域提升会移除模块外的函数包装,体积改进; 更显著的改进是 JavaScript 在浏览器中加载的速度

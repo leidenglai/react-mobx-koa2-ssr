@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: path.join(rootPath, 'dist/client'),
-    publicPath: '/'
+    publicPath: '/static/'
   },
   resolve: {
     extensions: ['.js', '.css', '.less'],
@@ -28,7 +28,11 @@ module.exports = {
       // ================================
       client,
       assets: path.join(client, 'assets'),
-      containers: path.join(client, 'containers')
+      containers: path.join(client, 'containers'),
+      utils: path.join(client, 'utils'),
+      components: path.join(client, 'components'),
+      stores: path.join(client, 'stores'),
+      static: path.join(rootPath, 'static')
     }
   },
   module: {
@@ -53,7 +57,8 @@ module.exports = {
         options: {
           limit: 10240, // 10KB 以下使用 base64
           name: 'img/[name]-[hash:6].[ext]'
-        }
+        },
+        exclude: [path.join(rootPath, 'static')]
       }
     ]
   },
@@ -77,7 +82,6 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin(), // 进度条
-
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [rucksack(), autoprefixer({ browsers: ['last 2 versions', 'Firefox ESR', '> 2%', 'ie >= 10', 'iOS >= 9'] })]

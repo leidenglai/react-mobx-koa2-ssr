@@ -16,6 +16,7 @@ function getExternals() {
     }, {})
 }
 
+// TODO
 const serverConfig = {
   mode: baseConfig.mode,
   context: path.resolve(__dirname, '..'),

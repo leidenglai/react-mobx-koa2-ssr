@@ -4,7 +4,10 @@
     "paths": {
       "client/*": ["client/*"],
       "assets/*": ["client/assets/*"],
-      "containers/*": ["client/containers/*"]
+      "containers/*": ["client/containers/*"],
+      "utils/*": ["client/utils/*"],
+      "stores/*": ["client/stores/*"],
+      "components/*": ["client/components/*"]
     },
     "experimentalDecorators": true
   }

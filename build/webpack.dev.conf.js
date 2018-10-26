@@ -8,7 +8,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const rootPath = path.resolve(__dirname, '..') // 项目根目录
 const SOURCE_MAP = true
 
-config.output.publicPath = '/'
 config.output.filename = '[name].js'
 config.output.chunkFilename = '[id].js'
 

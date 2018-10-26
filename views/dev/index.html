@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <title>雷登来的简历</title>
-  <meta name="description" content="高级前端工程师，5年前端开发经验，其中2年js游戏开发，3年电商开发"/>
-
+  <title><%- title %></title>
+  <meta name="description" content="<%- description %>" />
+  <script>
+    window.__INITIAL_STATE__ = <%- stores %>;
+  </script>
 </head>
 
 <body>
 <div id="app"><%- root %></div>
-<script type="text/javascript" src="/vendors.js"></script><script type="text/javascript" src="/app.js"></script></body>
+<script type="text/javascript" src="/static/vendors.js"></script><script type="text/javascript" src="/static/app.js"></script></body>
 
 </html>

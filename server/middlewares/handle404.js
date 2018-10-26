@@ -1,13 +1,14 @@
 async function handle404(ctx, next) {
-  // if (ctx.status === 404) {
-  //   ctx.redirect('/')
-  //   ctx.status = 301
-  // } else {
-  //   next()
-  // }
-  // console.log(ctx)
-
-  next()
+  if (ctx.status === 404) {
+    if (/^\/api\/|^\/static\//.test(ctx.url)) {
+      next()
+    } else {
+      ctx.redirect('/resume')
+      ctx.status = 301
+    }
+  } else {
+    next()
+  }
 }
 
 export default handle404

@@ -6,14 +6,17 @@ global.__PROD__ = process.env.NODE_ENV.trim() === 'production'
 require('babel-polyfill')
 // Node babel source map support
 require('source-map-support').install()
+require('isomorphic-fetch')
 // Javascript require hook
 const babelRegister = require('@babel/register')
 
 babelRegister({
-  presets: ['@babel/preset-env', '@babel/preset-react'],
+  presets: ['@babel/preset-react', ['@babel/env', { targets: { node: 'current' }}]],
   plugins: [
     'add-module-exports',
     '@babel/plugin-transform-runtime',
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
     [
       'import',
       {
@@ -21,6 +24,7 @@ babelRegister({
         style: true
       }
     ],
+    'lodash',
     [
       'css-modules-transform',
       {
@@ -53,16 +57,18 @@ require('asset-require-hook')({
 
 const app = require('./app.js')
 const convert = require('koa-convert')
+const mount = require('koa-mount')
+const server = require('koa-static')
 const webpack = require('webpack')
 const fs = require('fs')
 const path = require('path')
 const devMiddleware = require('koa-webpack-dev-middleware')
 const hotMiddleware = require('koa-webpack-hot-middleware')
 const views = require('koa-views')
-const clientRoute = require('./middlewares/clientRoute')
 const handle404 = require('./middlewares/handle404')
+const handleRes = require('./middlewares/handleRes')
 const webpackConfig = require('../build/webpack.dev.conf')
-
+const router = require('./routes')
 // 配置别名
 const moduleAlias = require('module-alias')
 
@@ -88,7 +94,15 @@ compiler.plugin('emit', (compilation, callback) => {
 })
 
 app.use(views(path.resolve(__dirname, '../views/dev'), { map: { html: 'ejs' }}))
-app.use(clientRoute.routes())
+app.use(mount('/static', server(path.resolve(__dirname, '../static'))))
+
+const clientRoute = require('./middlewares/clientRoute')
+
+app.use(clientRoute)
+app.use(router.routes())
+app.use(handleRes) // 处理body返回
+
+app.use(router.allowedMethods())
 
 console.log(`\n==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.\n`)
 
