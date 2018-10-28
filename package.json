@@ -1,14 +1,14 @@
 {
-  "name": "my-resume",
+  "name": "react-mobx-koa-ssr",
   "description": "后端渲染react和webpack版本的简历模板",
   "keywords": [
     "React",
     "Mobx",
     "SSR",
-    "react-router v4"
+    "koa2"
   ],
   "author": "leidenglai <leidenglai@foxmail.com>",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "scripts": {
     "start:front": "cross-env NODE_ENV=development node build/dev.js",
     "dev": "cross-env NODE_ENV=development nodemon --legacy-watch ./server/server.dev.js --watch server --watch build",

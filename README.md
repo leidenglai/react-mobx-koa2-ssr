@@ -30,9 +30,10 @@ koa 框架、前后端路由处理、数据管理 redux、MongoDB、Redis、toke
 ## 本地开发
 
 1. 安装依赖：`npm install`
-2. 启动 node 开发环境：`npm run dev`
-3. 构建生产环境版本：`npm run build`
-4. 运行 node 生产环境：`npm run start`
+2. 启动 MongoDB
+3. 启动 node 开发环境：`npm run dev`
+4. 构建生产环境版本：`npm run build`
+5. 运行 node 生产环境：`npm run start`
 
 ## 开发时遇到的坑
 
