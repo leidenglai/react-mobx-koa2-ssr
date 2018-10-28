@@ -2,9 +2,6 @@
 
 ## Koa2 + React + Mobx + Webpack4 + antd
 
-线上 react 版本 [leidenglai.com](https://www.leidenglai.com)
-线上 node 版本 [leiresume.com](https://www.leiresume.com)
-
 ## 项目简介
 
 此项目采用后端 nodejs koa2 框架渲染 react + mobx 的项目 demo，主要实现如下功能：
