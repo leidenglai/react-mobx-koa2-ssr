@@ -15,8 +15,15 @@
 4. SSR(前后端同构)，后端渲染时预加载数据
 5. 简单的 SEO 功能
 
-现项目中有一个简历模版页，路由：http://127.0.0.1:3725/resume 目录：/client/containers/resume/，可以做后端数据预加载的参考。
+## 本地开发
 
+1. 安装依赖：`npm install`
+2. 启动 MongoDB
+3. 启动 node 开发环境：`npm run dev`
+4. 构建生产环境版本：`npm run build`
+5. 运行 node 生产环境：`npm run start`
+
+现项目中有一个简历模版页，路由：http://127.0.0.1:3725/resume 目录：/client/containers/resume/，可以做后端数据预加载的参考。
 
 ## 目录结构
 
@@ -35,13 +42,6 @@
 - [React + MobX TodoMVC Example](https://github.com/mobxjs/mobx-react-todomvc)
 - [React Isomorphic Boilerplate](https://github.com/chikara-chan/react-isomorphic-boilerplate)
 
-## 本地开发
-
-1. 安装依赖：`npm install`
-2. 启动 MongoDB
-3. 启动 node 开发环境：`npm run dev`
-4. 构建生产环境版本：`npm run build`
-5. 运行 node 生产环境：`npm run start`
 
 ## 开发时遇到的坑
 
