@@ -3,10 +3,11 @@
     "browser": true,
     "node": true,
     "commonjs": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "globals": {
-    "__DEV__": false
+    "__DEV__": true
   },
   "parser": "babel-eslint",
   "extends": ["eslint:recommended", "plugin:react/recommended"],
@@ -25,7 +26,9 @@
       "version": "16.3.2"
     }
   },
+  "plugins": ["mocha"],
   "rules": {
+    "mocha/no-exclusive-tests": "error",
     "array-bracket-spacing": ["error"],
     "arrow-body-style": ["error", "as-needed", {"requireReturnForObjectLiteral": true}],
     "arrow-parens": ["error", "as-needed"],

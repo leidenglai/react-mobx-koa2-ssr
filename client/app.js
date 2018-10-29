@@ -6,7 +6,6 @@ import 'isomorphic-fetch'
 
 import Root from 'client/root'
 
-/* global __DEV__ */
 if (__DEV__) {
   console.info('[当前环境] 开发环境')
 }

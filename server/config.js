@@ -4,9 +4,8 @@
 import path from 'path'
 
 const config = {
-  /* global __DEV__ */
   // debug 为 true 时，用于本地调试
-  debug: __DEV__ ? true : false,
+  debug: true,
 
   logDir: path.join(__dirname, 'logs'),
 

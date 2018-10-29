@@ -3,7 +3,7 @@ async function handle404(ctx, next) {
     if (/^\/api\/|^\/static\//.test(ctx.url)) {
       next()
     } else {
-      ctx.redirect('/resume')
+      ctx.redirect('/blog/list')
       ctx.status = 301
     }
   } else {

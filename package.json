@@ -15,7 +15,7 @@
     "start": "cd dist && node ./server/server.js",
     "build": "cross-env NODE_ENV=production node build/prod.js && cross-env NODE_ENV=production node build/serv.js",
     "zip": "rm ./dist/my-resume.zip && zip -r ./dist/my-resume.zip ./dist",
-    "test": "cross-env NODE_ENV=test mocha 'test/**/*.test.js' --reporter spec -r should -r test/env --timeout 15000 --compilers js:babel-core/register"
+    "test": "cross-env NODE_ENV=test mocha 'test/**/*.test.js' --reporter spec -r should -r test/env --timeout 15000 --compilers js:@babel/register"
   },
   "repository": {
     "type": "git",
@@ -98,6 +98,7 @@
     "mini-css-extract-plugin": "^0.4.3",
     "mocha": "^5.2.0",
     "module-alias": "^2.1.0",
+    "nock": "^10.0.1",
     "node-style-loader": "0.0.1-alpha",
     "nodemon": "^1.18.4",
     "postcss": "^6.0.21",
@@ -106,8 +107,10 @@
     "progress-bar-webpack-plugin": "^1.10.0",
     "react-hot-loader": "^4.3.11",
     "rucksack-css": "^0.9.1",
+    "should": "^13.2.3",
     "source-map-support": "^0.5.9",
     "style-loader": "^0.23.1",
+    "supertest": "^3.3.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^0.5.7",
     "webpack": "^4.20.0",
