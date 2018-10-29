@@ -7,6 +7,7 @@ import { Provider } from 'mobx-react'
 import routes from '../../client/routes'
 import { createServerState as stores } from '../../client/stores'
 import serialize from 'serialize-javascript'
+import { getSeoInfo } from '../proxy/seo'
 
 // 避免mobx服务端渲染的内存泄漏问题
 useStaticRendering(true)
@@ -30,7 +31,7 @@ function loadBranchData(ctx) {
 async function clientRoute(ctx, next) {
   const routerContext = {
     status: 200,
-    seoInfo: { title: '', keywords: '', description: '' }
+    seoInfo: { title: '', description: '' }
   }
 
   // useful on the server for preloading data
@@ -64,11 +65,15 @@ async function clientRoute(ctx, next) {
     if (routerContext.status == 404) {
       await next()
     } else {
+      // 获取seo 优先使用数据库的seo信息
+      const seoInfo = await getSeoInfo(ctx.url)
+      const seoFullInfo = Object.assign({}, routerContext.seoInfo, seoInfo)
+
       await ctx.render('index', {
         root: Root,
         stores: serialize(stores, { isJSON: true }),
-        title: routerContext.seoInfo.title,
-        description: routerContext.seoInfo.description
+        title: seoFullInfo.title,
+        description: seoFullInfo.description
       })
     }
   }

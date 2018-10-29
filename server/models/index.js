@@ -12,5 +12,7 @@ db.on('error', err => {
 
 // models
 require('./user')
+require('./seo')
 
 export const User = mongoose.model('userColletion')
+export const Seo = mongoose.model('seoColletion')

@@ -11,7 +11,7 @@ import { Route } from 'react-router-dom'
 const SetStaticContext = ({ code, children, seoInfo }) =>
   <Route
     render={({ staticContext }) => {
-      seoInfo = { title: '', keywords: '', description: '', ...seoInfo }
+      seoInfo = { title: '', description: '', ...seoInfo }
 
       if (staticContext) {
         staticContext.status = code ? code : 200

@@ -11,9 +11,9 @@ const ListItem = List.Item
 @inject('userStore')
 @observer
 export default class ResumePage extends Component {
-  // 服务器端渲染需要的静态方法
   /**
    * 本页的seo
+   * 如果是动态路由 需要后端处理
    */
   static seoInfo = {
     title: '雷登来的简历',
