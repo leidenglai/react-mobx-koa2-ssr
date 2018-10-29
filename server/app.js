@@ -6,7 +6,7 @@ import convert from 'koa-convert'
 
 const app = new Koa()
 
-app.keys = ['this is my secret']
+app.keys = ['This is my secret']
 app.use(convert(session(app)))
 app.use(compress())
 app.use(logger())
