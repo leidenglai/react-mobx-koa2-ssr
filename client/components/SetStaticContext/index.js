@@ -7,9 +7,8 @@ import { Route } from 'react-router-dom'
  * @param  {Number} options.code     页面状态吗
  * @param  {Component} options.children 子组件
  * @param  {Object} options.seoInfo  seo参数
- * @param  {Function} options.onEnter  初始化需要调用接口
  */
-const SetStaticContext = ({ code, children, seoInfo, onEnter }) =>
+const SetStaticContext = ({ code, children, seoInfo }) =>
   <Route
     render={({ staticContext }) => {
       seoInfo = { title: '', keywords: '', description: '', ...seoInfo }
@@ -17,7 +16,6 @@ const SetStaticContext = ({ code, children, seoInfo, onEnter }) =>
       if (staticContext) {
         staticContext.status = code ? code : 200
         staticContext.seoInfo = seoInfo
-        staticContext.onEnter = onEnter
       }
 
       if (typeof window !== 'undefined') {

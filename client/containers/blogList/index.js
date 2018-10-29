@@ -23,7 +23,7 @@ export default class BlogList extends Component {
 
   render() {
     return (
-      <SetStaticContext code={200} seoInfo={BlogList.seoInfo} onEnter={BlogList.onEnter}>
+      <SetStaticContext code={200} seoInfo={BlogList.seoInfo}>
         <h1>Blog List Demo Page</h1>
         <Link to={'/resume'}>我的简历</Link>
       </SetStaticContext>

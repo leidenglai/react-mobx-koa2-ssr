@@ -19,13 +19,6 @@ export default class ResumePage extends Component {
     title: '雷登来的简历',
     description: '雷登来的简历，高级前端开发工程师、前端架构。5年前端开发经验，其中2年js游戏开发，3年电商开发。'
   }
-  /**
-   * 初始化之前需要加载的数据
-   * @param {Store} options.stores mobx的store
-   */
-  static onEnter({ stores }) {
-    return Promise.all([stores.userStore.fetchUserData()])
-  }
 
   constructor(props) {
     super(props)
@@ -41,7 +34,7 @@ export default class ResumePage extends Component {
     const { userData } = userStore
 
     return (
-      <SetStaticContext code={200} seoInfo={ResumePage.seoInfo} onEnter={ResumePage.onEnter}>
+      <SetStaticContext code={200} seoInfo={ResumePage.seoInfo}>
         <Layout className={style.mainWrap}>
           <Content className={style.contentWrap}>
             <Row>

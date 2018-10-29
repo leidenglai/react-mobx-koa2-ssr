@@ -14,7 +14,8 @@
     "dev": "cross-env NODE_ENV=development nodemon --legacy-watch ./server/server.dev.js --watch server --watch build",
     "start": "cd dist && node ./server/server.js",
     "build": "cross-env NODE_ENV=production node build/prod.js && cross-env NODE_ENV=production node build/serv.js",
-    "zip": "zip -r ./dist/my-resume.zip ./dist"
+    "zip": "rm ./dist/my-resume.zip && zip -r ./dist/my-resume.zip ./dist",
+    "test": "cross-env NODE_ENV=test mocha 'test/**/*.test.js' --reporter spec -r should -r test/env --timeout 15000 --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -48,7 +49,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-router": "^4.2.0",
+    "react-router": "^4.3.1",
     "react-router-config": "^4.4.0-beta.1",
     "react-router-dom": "^4.2.2",
     "serialize-javascript": "^1.5.0"
@@ -82,6 +83,7 @@
     "eslint-friendly-formatter": "^1.2.2",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-react": "^7.7.0",
     "eventsource-polyfill": "^0.9.6",
     "favicons-webpack-plugin": "0.0.9",
@@ -94,6 +96,7 @@
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
     "mini-css-extract-plugin": "^0.4.3",
+    "mocha": "^5.2.0",
     "module-alias": "^2.1.0",
     "node-style-loader": "0.0.1-alpha",
     "nodemon": "^1.18.4",

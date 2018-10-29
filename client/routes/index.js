@@ -7,6 +7,7 @@ const routes = [
   {
     path: '/resume',
     exact: true,
+    loadData: ({ stores }) => Promise.all([stores.userStore.fetchUserData()]),
     component: Resume
   },
   {

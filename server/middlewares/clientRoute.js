@@ -10,17 +10,22 @@ import serialize from 'serialize-javascript'
 
 // 避免mobx服务端渲染的内存泄漏问题
 useStaticRendering(true)
-/**
- * useful on the server for preloading data
- * @param {Object} location
- */
-// const loadBranchData = location => {
-//   const branch = matchRoutes(Routes, location.pathname)
 
-//   const promises = branch.map(({ route, match }) => route.loadData ? route.loadData(match) : Promise.resolve(null))
+function loadBranchData(ctx) {
+  let branch
 
-//   return Promise.all(promises)
-// }
+  try {
+    // react-router@4.3.1版本没有Router.computeRootMatch 方法 会报错
+    // Router.computeRootMatch会在4.4.0版本加入 目前只有beta版 先不使用
+    branch = matchRoutes(routes, ctx.url)
+  } catch (error) {
+    return false
+  }
+
+  const promises = branch.map(({ route, match }) => route.loadData ? route.loadData({ stores, ...match }) : Promise.resolve(null))
+
+  return Promise.all(promises)
+}
 
 async function clientRoute(ctx, next) {
   const routerContext = {
@@ -28,24 +33,15 @@ async function clientRoute(ctx, next) {
     seoInfo: { title: '', keywords: '', description: '' }
   }
 
-  let branch
+  // useful on the server for preloading data
+  const loadBranchStatus = loadBranchData(ctx)
 
-  try {
-    branch = matchRoutes(routes, ctx.url)
-    console.log('预加载数据:', ctx.url)
-  } catch (err) {
+  if (!loadBranchStatus) {
     return next()
   }
 
-  const promises = branch.map(({ route, match }) => {
-    const { component } = route
-    const { params, path } = match
-
-    return component.onEnter ? component.onEnter({ params, path, stores }) : Promise.resolve(null)
-  })
-
   try {
-    await Promise.all(promises)
+    await loadBranchStatus
     console.log('预加载数据完成')
   } catch (err) {
     console.log('预加载数据失败：', err)
