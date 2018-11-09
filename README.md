@@ -1,4 +1,4 @@
-# # React SSR 版本的简单模板
+# # React SSR 的简单模板
 
 ## Koa2 + React + Mobx + Webpack4 + antd
 
@@ -24,8 +24,8 @@
 
 ## 目录结构
 
-- /build // 项目构建，webpack配置目录
-- /client // 客户端代码 
+- /build // 项目构建，webpack 配置目录
+- /client // 客户端代码
 - /server // 服务器端代码
 - /static // 不需要处理的静态文件，前后端都使用
 - /views // index.tpl.html 模版文件目录
@@ -39,6 +39,41 @@
 - [React + MobX TodoMVC Example](https://github.com/mobxjs/mobx-react-todomvc)
 - [React Isomorphic Boilerplate](https://github.com/chikara-chan/react-isomorphic-boilerplate)
 
+## 项目入口
+
+进入项目根目录打开 package.json 文件，它定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install 命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。
+根据 scripts 属性下面的配置，我们可以看到项目有 4 个入口：
+
+- start:front：只启动前端开发环境
+- dev：启动服务器开发，也是本项目的主要启动方式
+- start：启动项目生产环境，启动之前需要先构建项目生产环境代码
+- test：启动项目测试
+
+_开发入口 dev_
+命令：`cross-env NODE_ENV=development nodemon --legacy-watch ./server/server.dev.js --watch server --watch build`
+
+cross-env NODE_ENV=development
+设置环境变量为 NODE_ENV development，cross-env 命令兼容 window
+
+nodemon --legacy-watch ./server/server.dev.js --watch server --watch build
+使用 nodemon 启动开发环境 同时实时监听代码变化，用于热更新，项目开发环境入口文件 `./server/server.dev.js`
+
+_server.dev.js_
+重要的几个点：
+
+1. `require('babel-polyfill')` 他会仿效一个完整的 ES2015+ 环境
+2. 配置 babel 运行环境，配置基本和 `.babelrc` 文件一样
+
+```javascript
+const babelRegister = require('@babel/register')
+
+// Javascript require hook
+babelRegister({
+  // ....
+})
+```
+
+3. webpack 以及热更新配置
 
 ## 开发时遇到的坑
 
