@@ -10,8 +10,8 @@
       {
         "libraryName": "antd",
         "style": true
-      },
-      "lodash"
-    ]
+      }
+    ],
+    "lodash"
   ]
 }

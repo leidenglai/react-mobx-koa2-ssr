@@ -1,4 +1,4 @@
-import { map } from 'lodash'
+import _ from 'lodash'
 import { SERVER_API } from 'client/config'
 import responseHandler from 'utils/responseHandler'
 
@@ -15,7 +15,7 @@ export default function packOptionsToFetch({ api, params = {}, method = 'POST' }
   return new Promise((resolve, reject) => {
     let completeApi = SERVER_API + api
 
-    const requestParams = map(params, (value, key) => {
+    const requestParams = _.map(params, (value, key) => {
       if (typeof value === 'object') {
         value = JSON.stringify(value)
       } else if (typeof value === 'string') {
@@ -28,9 +28,6 @@ export default function packOptionsToFetch({ api, params = {}, method = 'POST' }
     const options = {
       method,
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-
-      // 让请求中包含cookie
-      credentials: 'include',
 
       /*
        * same-origin：

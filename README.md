@@ -15,10 +15,12 @@
 ## 本地开发
 
 1. 安装依赖：`npm install`
-2. 启动 MongoDB
+2. 启动 MongoDB `$ mongod -f /usr/local/etc/mongod.conf`
 3. 启动 node 开发环境：`npm run dev`
 4. 构建生产环境版本：`npm run build`
 5. 运行 node 生产环境：`npm run start`
+
+启动需要 MongoDB 数据库有数据，可以按照 models 中的数据模型创建一份假数据。MongoDB：`mongodb://127.0.0.1:27017/ReactIsomorphicBlogDb`
 
 现项目中有一个简历模版页，路由：http://127.0.0.1:3725/resume 目录：/client/containers/resume/，可以做后端数据预加载的参考。
 
@@ -84,5 +86,4 @@ babelRegister({
 
 ## TODO
 
-1. 还未配置如何构建生产代码
-2. 动态参数的路由页面还没有试过，后续加入 博客详情页
+动态参数的路由页面还没有试过，后续写一个 博客系统

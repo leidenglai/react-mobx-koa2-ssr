@@ -1,5 +1,5 @@
 async function handleRes(ctx, next) {
-  ctx.set('Access-Control-Allow-Origin', 'http://localhost:3725')
+  ctx.set('Access-Control-Allow-Origin', '*')
   ctx.set('Access-Control-Allow-Methods', 'PUT,DELETE,POST,GET')
   ctx.set('Access-Control-Allow-Credentials', true)
 

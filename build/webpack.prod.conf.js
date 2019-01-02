@@ -6,11 +6,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const rootPath = path.resolve(__dirname, '..') // 项目根目录
 const clientConfig = baseConfig
-const client = path.join(rootPath, 'client') // 开发源码目录
+// const client = path.join(rootPath, 'client') // 开发源码目录
 
 clientConfig.output.filename = '[name].[chunkhash:6].js'
 clientConfig.output.chunkFilename = '[id].[chunkhash:6].js'
@@ -50,6 +51,9 @@ clientConfig.module.rules.push(
 clientConfig.optimization.minimizer = [new UglifyJsPlugin()]
 
 clientConfig.plugins.push(
+  // // 打包细节插件，能查看已打包好的js包中各模块的体积
+  // new BundleAnalyzerPlugin(),
+
   new CleanWebpackPlugin('dist', {
     root: rootPath,
     verbose: false
@@ -72,22 +76,6 @@ clientConfig.plugins.push(
     'process.env': {
       // 这是给 React 打包用的
       NODE_ENV: JSON.stringify('production')
-    }
-  }),
-
-  new FaviconsWebpackPlugin({
-    logo: path.join(client, 'assets/images/favicon.jpg'),
-    icons: {
-      android: false,
-      appleIcon: false,
-      appleStartup: false,
-      coast: false,
-      favicons: true,
-      firefox: false,
-      opengraph: false,
-      twitter: false,
-      yandex: false,
-      windows: false
     }
   }),
 

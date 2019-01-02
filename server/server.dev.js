@@ -74,6 +74,10 @@ const moduleAlias = require('module-alias')
 
 moduleAlias.addAliases(webpackConfig.resolve.alias)
 
+// mongo数据库
+require('./middlewares/mongooseLog') // 打印 mongodb 查询日志
+require('./models')
+
 const port = process.env.port || 3725
 const compiler = webpack(webpackConfig)
 
@@ -100,9 +104,8 @@ const clientRoute = require('./middlewares/clientRoute')
 
 app.use(clientRoute)
 app.use(router.routes())
-app.use(handleRes) // 处理body返回
-
 app.use(router.allowedMethods())
+app.use(handleRes) // 处理body返回
 
 console.log(`\n==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.\n`)
 
