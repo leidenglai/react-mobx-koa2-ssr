@@ -8,7 +8,7 @@
     "koa2"
   ],
   "author": "leidenglai <leidenglai@foxmail.com>",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "scripts": {
     "start:front": "cross-env NODE_ENV=development node build/dev.js",
     "dev": "cross-env NODE_ENV=development nodemon --legacy-watch ./server/server.dev.js --watch server --watch build",
