@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Icon } from 'antd'
 import style from './home.style.css'
 import SetStaticContext from 'components/SetStaticContext'
+import 'assets/animation.less'
 
 export default class Home extends PureComponent {
   // 服务器端渲染需要的静态方法
@@ -30,7 +31,9 @@ export default class Home extends PureComponent {
 
           <main className={style.wrapper}>
             <div className={style.slogon_wrap}>
-              <h1>XiaoLei & 雷登来</h1>
+              <h1 className="glitch" data-text="XiaoLei & 雷登来">
+                XiaoLei & 雷登来
+              </h1>
               <p>Coder • Front-end Developer • Hello World!</p>
             </div>
 
