@@ -1,9 +1,14 @@
+import Home from 'containers/home'
 import BlogLayout from 'components/BlogLayout'
 import BlogList from 'containers/blogList'
 import Resume from 'containers/resume'
 import NotFound from 'components/404'
 
 const routes = [
+  {
+    path: '/home',
+    component: Home
+  },
   {
     path: '/resume',
     exact: true,

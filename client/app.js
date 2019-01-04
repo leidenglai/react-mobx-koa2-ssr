@@ -3,6 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API
 import 'isomorphic-fetch'
+import 'assets/common.less'
 
 import Root from 'client/root'
 

@@ -14,7 +14,7 @@
     "dev": "cross-env NODE_ENV=development nodemon --legacy-watch ./server/server.dev.js --watch server --watch build",
     "start": "cd dist && node ./server/server.js",
     "build": "cross-env NODE_ENV=production node build/prod.js && cross-env NODE_ENV=production node build/serv.js",
-    "zip": "rm ./dist/my-resume.zip && zip -r ./dist/my-resume.zip ./dist",
+    "zip": "zip -r ./dist/my-resume.zip ./dist",
     "test": "cross-env NODE_ENV=test mocha 'test/**/*.test.js' --reporter spec -r should -r test/env --timeout 15000 --compilers js:@babel/register"
   },
   "repository": {
@@ -86,7 +86,6 @@
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-react": "^7.7.0",
     "eventsource-polyfill": "^0.9.6",
-    "favicons-webpack-plugin": "0.0.9",
     "file-loader": "^2.0.0",
     "html-loader": "^0.4.3",
     "html-webpack-inline-source-plugin": "0.0.10",
