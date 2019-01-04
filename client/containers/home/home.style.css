@@ -78,10 +78,9 @@
 
 .wrapper {
   position: relative;
-  top: 33%;
+  top: 50%;
   color: #fff;
-  width: 1200px;
-  margin: 0 auto;
+  margin: -160px auto 0;
   text-align: center;
   font-weight: 300;
 }
@@ -172,12 +171,12 @@
 .footer {
   position: absolute;
   color: #fff;
-  top: 50%;
-  margin-top: 17vw;
+  bottom: 24px;
   text-align: center;
   width: 100%;
   font-weight: 300;
   opacity: .8;
+  font-size: 20px;
 }
 
 @keyframes slogon_wrap {
@@ -188,5 +187,29 @@
   100% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .wrapper {
+    margin: -190px auto 0;
+  }
+  .wrapper h1 {
+    font-size: 40px;
+  }
+  .wrapper p {
+    font-size: 14px;
+  }
+  .share_wrap ul {
+    margin-top: 80px;
+  }
+  .share_wrap .link_item {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 10px;
+  }
+  .footer {
+    font-size: 12px;
   }
 }
