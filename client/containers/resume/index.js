@@ -53,7 +53,7 @@ export default class ResumePage extends Component {
                     bordered={false}
                     title={
                       <div>
-                        <Icon type="user" theme="outlined" />
+                        <Icon type="user-o" />
                         <span className={style.siderTitle}>Basic info. 基本信息</span>
                       </div>
                     }>
@@ -88,7 +88,7 @@ export default class ResumePage extends Component {
                     bordered={false}
                     title={
                       <div>
-                        <Icon type="phone" theme="outlined" />
+                        <Icon type="phone-o" />
                         <span className={style.siderTitle}>Contact. 联系方式</span>
                       </div>
                     }>
@@ -110,7 +110,7 @@ export default class ResumePage extends Component {
                     bordered={false}
                     title={
                       <div>
-                        <Icon type="like" theme="outlined" />
+                        <Icon type="like-o" />
                         <span className={style.siderTitle}>Application. 期望工作</span>
                       </div>
                     }>
@@ -130,7 +130,7 @@ export default class ResumePage extends Component {
                     bordered={false}
                     title={
                       <div>
-                        <Icon type="thunderbolt" theme="outlined" />
+                        <Icon type="thunderbolt-o" />
                         <span className={style.siderTitle}>Tech. 个人能力</span>
                       </div>
                     }>
@@ -153,7 +153,7 @@ export default class ResumePage extends Component {
                   bordered={false}
                   title={
                     <div>
-                      <Icon type="double-right" theme="outlined" />
+                      <Icon type="double-right-o" />
                       <span className={style.siderTitle}>Skill. 主要技能</span>
                     </div>
                   }>
@@ -173,7 +173,7 @@ export default class ResumePage extends Component {
                   bordered={false}
                   title={
                     <div>
-                      <Icon type="double-right" theme="outlined" />
+                      <Icon type="double-right-o" />
                       <span className={style.siderTitle}>Company. 工作经历</span>
                     </div>
                   }>
@@ -214,7 +214,7 @@ export default class ResumePage extends Component {
                   bordered={false}
                   title={
                     <div>
-                      <Icon type="double-right" theme="outlined" />
+                      <Icon type="double-right-o" />
                       <span className={style.siderTitle}>Project. 项目经历</span>
                     </div>
                   }>
@@ -247,7 +247,7 @@ export default class ResumePage extends Component {
                   bordered={false}
                   title={
                     <div>
-                      <Icon type="double-right" theme="outlined" />
+                      <Icon type="double-right-o" />
                       <span className={style.siderTitle}>University. 教育经历</span>
                     </div>
                   }>

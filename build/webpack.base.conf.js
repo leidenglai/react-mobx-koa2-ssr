@@ -32,7 +32,8 @@ module.exports = {
       utils: path.join(client, 'utils'),
       components: path.join(client, 'components'),
       stores: path.join(client, 'stores'),
-      static: path.join(rootPath, 'static')
+      static: path.join(rootPath, 'static'),
+      '@ant-design/icons/lib/dist$': path.join(client, 'utils/antdIcon.js')
     }
   },
   module: {
