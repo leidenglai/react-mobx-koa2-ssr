@@ -12,7 +12,7 @@ export default class Home extends PureComponent {
    */
   static seoInfo = {
     title: 'XiaoLei\'s Home',
-    description: '雷登来的博客，JavaScript开发心得记录。'
+    description: '雷登来的主页，JavaScript开发心得记录。'
   }
 
   constructor(props) {
@@ -59,11 +59,6 @@ export default class Home extends PureComponent {
                     <Icon type="zhihu" />
                   </a>
                 </li>
-                {/* <li>
-                  <Link className={style.link_item} title="在线简历" to="/resume" target="_blank" rel="noopener noreferrer">
-                    <Icon type="file-text" />
-                  </Link>
-                </li> */}
                 <li>
                   <a className={style.link_item} title="发送邮件" href="mailto:leidenglai@qq.com" target="_blank" rel="noopener noreferrer">
                     <Icon type="mail" />

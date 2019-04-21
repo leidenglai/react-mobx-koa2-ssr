@@ -40,12 +40,15 @@
     opacity: 0.3;
     transform: translate(0, -17%)
   }
+
   10% {
     opacity: 1;
   }
+
   95% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.3;
     transform: translate(0, 0)
@@ -71,6 +74,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: .5;
   }
@@ -99,6 +103,7 @@
   letter-spacing: -0.035em;
   line-height: 1em;
   margin-bottom: 16px;
+  opacity: 0.8;
 }
 
 .wrapper p {
@@ -157,6 +162,7 @@
     transform: translate3d(0, 1em, 0);
     opacity: 0;
   }
+
   100% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
@@ -184,6 +190,7 @@
     transform: translate3d(0, 1em, 0);
     opacity: 0;
   }
+
   100% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
@@ -194,21 +201,26 @@
   .wrapper {
     margin: -190px auto 0;
   }
+
   .wrapper h1 {
     font-size: 40px;
   }
+
   .wrapper p {
     font-size: 14px;
   }
+
   .share_wrap ul {
     margin-top: 80px;
   }
+
   .share_wrap .link_item {
     width: 40px;
     height: 40px;
     font-size: 16px;
     margin: 0 10px;
   }
+
   .footer {
     font-size: 12px;
   }
