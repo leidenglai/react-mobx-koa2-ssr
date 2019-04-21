@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { Icon } from 'antd'
 import style from './home.style.css'
 import SetStaticContext from 'components/SetStaticContext'
@@ -59,11 +59,11 @@ export default class Home extends PureComponent {
                     <Icon type="zhihu" />
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <Link className={style.link_item} title="在线简历" to="/resume" target="_blank" rel="noopener noreferrer">
                     <Icon type="file-text" />
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <a className={style.link_item} title="发送邮件" href="mailto:leidenglai@qq.com" target="_blank" rel="noopener noreferrer">
                     <Icon type="mail" />

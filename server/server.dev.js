@@ -75,8 +75,8 @@ const moduleAlias = require('module-alias')
 moduleAlias.addAliases(webpackConfig.resolve.alias)
 
 // mongo数据库
-require('./middlewares/mongooseLog') // 打印 mongodb 查询日志
-require('./models')
+// require('./middlewares/mongooseLog') // 打印 mongodb 查询日志
+// require('./models')
 
 const port = process.env.port || 3725
 const compiler = webpack(webpackConfig)
